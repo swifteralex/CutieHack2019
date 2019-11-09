@@ -50,8 +50,28 @@
         android:id="@+id/wall1"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="456dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wall1" />
+
+    <ImageView
+        android:id="@+id/wall3"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="400dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wall1" />
+
+    <ImageView
+        android:id="@+id/wall2"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="540dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wall1" />

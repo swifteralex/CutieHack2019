@@ -8,8 +8,12 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private float vx = 0;
     private float vy = 0;
     private int turtleDiameter = 80;
+    private boolean _gameOver = false;
 
     private ImageView[] trash = new ImageView[10];
     private ImageView[] walls = new ImageView[100];
@@ -52,8 +57,22 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         createLevel();
     }
 
+    public void retry(View view) {
+        ImageView turtle = findViewById(R.id.turtle);
+
+        int startingX = 0;
+        int startingY = 0;
+        vx = 0;
+        vy = 0;
+
+        turtle.setX(startingX);
+        turtle.setY(startingY);
+
+        _gameOver = false;
+    }
+
     public void gameOver() {
-        
+        _gameOver = true;
     }
 
     public void createLevel() {
@@ -61,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         trash[1] = findViewById(R.id.trash2);
         trash[2] = findViewById(R.id.trash3);
         trash[3] = findViewById(R.id.trash4);
+
+        walls[0] = findViewById(R.id.wall1);
+        walls[1] = findViewById(R.id.wall2);
+        walls[2] = findViewById(R.id.wall3);
     }
 
     @Override
@@ -75,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public class UpdateFrame extends TimerTask {
         public void run(){
 
+            if(_gameOver){
+                return;
+            }
+
             ImageView turtle = findViewById(R.id.turtle);
 
             if(turtle.getX() + vx < 0 || turtle.getX() + vx + turtleDiameter > screenWidth){
@@ -85,13 +112,29 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             }
             for(int i=0; i<4; i++) {
                 if (turtle.getX() + turtleDiameter >= trash[i].getX() && turtle.getX() <= trash[i].getX() + 80){
-                    if (turtle.getY() + turtleDiameter >= trash[i].getY() && turtle.getY() <= trash[i].getY() + 80){
-                        vx *= 0;
-                        vy *= 0;
+                    if (turtle.getY() + turtleDiameter >= trash[i].getY() && turtle.getY() <= trash[i].getY() + 80) {
+                        if (vx != 0) {
+                            gameOver();
+                        }
                     }
                 }
             }
 
+            int threshold = 10;
+            for(int i=0; i<3; i++){
+                if (turtle.getX() + vx + turtleDiameter >= walls[i].getX() && turtle.getX() + vx <= walls[i].getX() + 100){
+                    if (turtle.getY() + vy + turtleDiameter >= walls[i].getY() && turtle.getY() + vy <= walls[i].getY() + 100){
+                        if (turtle.getX() + turtleDiameter <= walls[i].getX() && turtle.getX() + vx + turtleDiameter >= walls[i].getX() ||
+                                turtle.getX() >= walls[i].getX() + 100 && turtle.getX() + vx <= walls[i].getX() + 100){
+                            vx *= -0.5;
+                        }
+                        if (turtle.getY() + turtleDiameter <= walls[i].getY() && turtle.getY() + vy + turtleDiameter >= walls[i].getY() ||
+                                turtle.getY() >= walls[i].getY() + 100 && turtle.getY() + vy <= walls[i].getY() + 100){
+                            vy *= -0.5;
+                        }
+                    }
+                }
+            }
 
             turtle.setX(turtle.getX() + vx);
             turtle.setY(turtle.getY() + vy);

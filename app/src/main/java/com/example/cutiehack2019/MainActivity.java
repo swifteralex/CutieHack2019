@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private ImageView[] trash = new ImageView[10];
     private ImageView[] walls = new ImageView[100];
-    //private ImageView turtle = findViewById(R.id.turtle);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,15 +74,43 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         _gameOver = true;
     }
 
+    public void win() {
+        _gameOver = true;
+    }
+
     public void createLevel() {
         trash[0] = findViewById(R.id.trash1);
         trash[1] = findViewById(R.id.trash2);
         trash[2] = findViewById(R.id.trash3);
         trash[3] = findViewById(R.id.trash4);
+        trash[4] = findViewById(R.id.trash5);
+        trash[5] = findViewById(R.id.trash6);
+        trash[6] = findViewById(R.id.trash7);
+        trash[7] = findViewById(R.id.trash9);
+
 
         walls[0] = findViewById(R.id.wall1);
         walls[1] = findViewById(R.id.wall2);
         walls[2] = findViewById(R.id.wall3);
+        walls[3] = findViewById(R.id.wall4);
+        walls[4] = findViewById(R.id.wall5);
+        walls[5] = findViewById(R.id.wall6);
+        walls[6] = findViewById(R.id.wall7);
+        walls[7] = findViewById(R.id.wall8);
+        walls[8] = findViewById(R.id.wall9);
+        walls[9] = findViewById(R.id.wall10);
+        walls[10] = findViewById(R.id.wall11);
+        walls[11] = findViewById(R.id.wall12);
+        walls[12] = findViewById(R.id.wall13);
+        walls[13] = findViewById(R.id.wall14);
+        walls[14] = findViewById(R.id.wall15);
+        walls[15] = findViewById(R.id.wall16);
+        walls[16] = findViewById(R.id.wall17);
+        walls[17] = findViewById(R.id.wall18);
+        walls[18] = findViewById(R.id.wall19);
+        walls[19] = findViewById(R.id.wall20);
+        walls[20] = findViewById(R.id.wall21);
+        walls[21] = findViewById(R.id.wall24);
     }
 
     @Override
@@ -110,7 +137,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             if(turtle.getY() + vy < 0 || turtle.getY() + vy + turtleDiameter > screenHeight) {
                 vy *= -0.5;
             }
-            for(int i=0; i<4; i++) {
+            if(turtle.getY() + vy > screenHeight - 200){
+                win();
+            }
+            for(int i=0; i<8; i++) {
                 if (turtle.getX() + turtleDiameter >= trash[i].getX() && turtle.getX() <= trash[i].getX() + 80){
                     if (turtle.getY() + turtleDiameter >= trash[i].getY() && turtle.getY() <= trash[i].getY() + 80) {
                         if (vx != 0) {
@@ -120,20 +150,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             }
 
-            int threshold = 10;
-            for(int i=0; i<3; i++){
-                if (turtle.getX() + vx + turtleDiameter >= walls[i].getX() && turtle.getX() + vx <= walls[i].getX() + 100){
-                    if (turtle.getY() + vy + turtleDiameter >= walls[i].getY() && turtle.getY() + vy <= walls[i].getY() + 100){
-                        if (turtle.getX() + turtleDiameter <= walls[i].getX() && turtle.getX() + vx + turtleDiameter >= walls[i].getX() ||
-                                turtle.getX() >= walls[i].getX() + 100 && turtle.getX() + vx <= walls[i].getX() + 100){
-                            vx *= -0.5;
-                        }
-                        if (turtle.getY() + turtleDiameter <= walls[i].getY() && turtle.getY() + vy + turtleDiameter >= walls[i].getY() ||
-                                turtle.getY() >= walls[i].getY() + 100 && turtle.getY() + vy <= walls[i].getY() + 100){
-                            vy *= -0.5;
+            try {
+                int threshold = 10;
+                for (int i = 0; i < 22; i++) {
+                    if (turtle.getX() + vx + turtleDiameter >= walls[i].getX() && turtle.getX() + vx <= walls[i].getX() + 100) {
+                        if (turtle.getY() + vy + turtleDiameter >= walls[i].getY() && turtle.getY() + vy <= walls[i].getY() + 100) {
+                            if (turtle.getX() + turtleDiameter <= walls[i].getX() && turtle.getX() + vx + turtleDiameter >= walls[i].getX() ||
+                                    turtle.getX() >= walls[i].getX() + 100 && turtle.getX() + vx <= walls[i].getX() + 100) {
+                                vx *= -0.5;
+                            }
+                            if (turtle.getY() + turtleDiameter <= walls[i].getY() && turtle.getY() + vy + turtleDiameter >= walls[i].getY() ||
+                                    turtle.getY() >= walls[i].getY() + 100 && turtle.getY() + vy <= walls[i].getY() + 100) {
+                                vy *= -0.5;
+                            }
                         }
                     }
                 }
+            } catch (Exception e) {
+                return;
             }
 
             turtle.setX(turtle.getX() + vx);
@@ -144,8 +178,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 rotation += 180;
             }
             turtle.setRotation(rotation - 90);
-
-
         }
     }
 }

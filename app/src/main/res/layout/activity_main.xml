@@ -13,8 +13,8 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/sand"
-        tools:layout_editor_absoluteX="-43dp"
-        tools:layout_editor_absoluteY="60dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="9dp" />
 
     <ImageView
         android:id="@+id/jellyfish3"
@@ -44,8 +44,8 @@
         android:id="@+id/jellyfish2"
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginStart="332dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="556dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,8 +56,8 @@
         android:id="@+id/jellyfish4"
         android:layout_width="80px"
         android:layout_height="80px"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="496dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="372dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -121,7 +121,7 @@
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="348dp"
+        android:layout_marginTop="380dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
@@ -134,13 +134,13 @@
         android:layout_marginTop="488dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall4" />
 
     <ImageView
         android:id="@+id/wall21"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="424dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -151,17 +151,17 @@
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="124dp"
-        android:layout_marginTop="564dp"
+        android:layout_marginTop="584dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall3" />
 
     <ImageView
         android:id="@+id/wall19"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="600dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="620dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wall1" />
@@ -171,10 +171,10 @@
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="268dp"
-        android:layout_marginTop="488dp"
+        android:layout_marginTop="508dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall2" />
 
     <ImageView
         android:id="@+id/wall16"
@@ -190,18 +190,18 @@
         android:id="@+id/wall15"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="368dp"
-        android:layout_marginTop="488dp"
+        android:layout_marginStart="316dp"
+        android:layout_marginTop="500dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall4" />
 
     <ImageView
         android:id="@+id/trash8"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="368dp"
-        android:layout_marginTop="424dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="396dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
@@ -210,8 +210,8 @@
         android:id="@+id/trash5"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="304dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginStart="372dp"
+        android:layout_marginTop="312dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
@@ -221,10 +221,10 @@
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="164dp"
-        android:layout_marginTop="528dp"
+        android:layout_marginTop="548dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall3" />
 
     <ImageView
         android:id="@+id/wall11"
@@ -244,7 +244,7 @@
         android:layout_marginTop="344dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall2" />
 
     <ImageView
         android:id="@+id/wall13"
@@ -264,7 +264,7 @@
         android:layout_marginTop="324dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall4" />
 
     <ImageView
         android:id="@+id/wall9"
@@ -274,7 +274,7 @@
         android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall2" />
 
     <ImageView
         android:id="@+id/wall8"
@@ -294,7 +294,7 @@
         android:layout_marginTop="172dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall3" />
 
     <ImageView
         android:id="@+id/wall5"
@@ -314,7 +314,7 @@
         android:layout_marginTop="92dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wall1" />
+        app:srcCompat="@drawable/wall4" />
 
     <ImageView
         android:id="@+id/wall4"
@@ -350,8 +350,8 @@
         android:id="@+id/trash1"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="432dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
@@ -400,8 +400,8 @@
         android:id="@+id/trash2"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="332dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="168dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />

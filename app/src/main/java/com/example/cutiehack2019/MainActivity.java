@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private ImageView[] trash = new ImageView[9];
     private ImageView[] walls = new ImageView[22];
-    private ImageView[] jellys = new ImageView[3];
+    private ArrayList<ImageView> jelly = new ArrayList<ImageView>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         Button gameOverButton1 = findViewById(R.id.button2);
         Button gameOverButton2 = findViewById(R.id.button3);
 
+        for(int i = 0; i < jelly.size(); i++) {
+            jelly.get(i).setVisibility(View.VISIBLE);
+        }
+
         int startingX = 0;
         int startingY = 0;
         vx = 0;
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         gameOverText.setX(20000);
         gameOverButton1.setX(20000);
         gameOverButton2.setX(20000);
+        score = 0;
 
         _gameOver = false;
     }
@@ -132,9 +138,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         trash[7] = findViewById(R.id.trash8);
         trash[8] = findViewById(R.id.trash9);
 
-//        for(int i = 1; i <= trash.length; i++) {
-//            int id = getResources().getIdentifier("trash" + i, "id", getPackageName());
-//            trash[i-1] = (ImageView) findViewById(id);
+        jelly.add((ImageView)findViewById(R.id.jellyfish3));
+        jelly.add((ImageView)findViewById(R.id.jellyfish));
+        jelly.add((ImageView)findViewById(R.id.jellyfish2));
+        jelly.add((ImageView)findViewById(R.id.jellyfish5));
+        jelly.add((ImageView)findViewById(R.id.jellyfish4));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish5));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish6));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish7));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish8));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish9));
+//        jelly.add((ImageView)findViewById(R.id.jellyfish10));
+
+//        for(int i = 0; i < jellys.length; i++) {
+//            int id = getResources().getIdentifier("jellyfish" + i, "id", getPackageName());
+//            jellys[i] = (ImageView) findViewById(id);
 //        }
 
         for(int i = 1; i <= 22; i++) {
@@ -176,10 +194,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public class UpdateFrame extends TimerTask {
         public void run(){
+            TextView scoreText = (TextView)findViewById(R.id.textView);
 
             if(_gameOver){
                 return;
             }
+            scoreText.setText("Score: " + score + " ");
 
             ImageView turtle = findViewById(R.id.turtle);
 
@@ -201,11 +221,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     }
                 }
             }
-            for(int i = 0; i < jellys.length; i++) {
-                if (turtle.getX() + turtleDiameter >= jellys[i].getX() && turtle.getX() <= jellys[i].getX() + 80){
-                    if (turtle.getY() + turtleDiameter >= jellys[i].getY() && turtle.getY() <= jellys[i].getY() + 80) {
-                        if (vx != 0) {
-                            
+            for(int i = 0; i < jelly.size(); i++) {
+                if (turtle.getX() + turtleDiameter >= jelly.get(i).getX() && turtle.getX() <= jelly.get(i).getX() + 80){
+                    if (turtle.getY() + turtleDiameter >= jelly.get(i).getY() && turtle.getY() <= jelly.get(i).getY() + 80) {
+                        if (vx != 0 && jelly.get(i).getVisibility() != View.INVISIBLE) {
+                            score += 100;
+                            jelly.get(i).setVisibility(View.INVISIBLE);
                         }
                     }
                 }

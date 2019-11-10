@@ -13,8 +13,68 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/sand"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="-43dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <ImageView
+        android:id="@+id/jellyfish3"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="228dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/jellyfish"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="256dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/jellyfish2"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="332dp"
+        android:layout_marginTop="548dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/jellyfish4"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="496dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/jellyfish5"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="36dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/background2"
@@ -24,7 +84,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/water"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="-16dp" />
+        tools:layout_editor_absoluteX="108dp" />
 
     <ImageView
         android:id="@+id/wall22"
@@ -40,8 +100,8 @@
         android:id="@+id/trash7"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="548dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
@@ -120,8 +180,8 @@
         android:id="@+id/wall16"
         android:layout_width="100px"
         android:layout_height="100px"
-        android:layout_marginStart="316dp"
-        android:layout_marginTop="488dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginTop="600dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wall1" />
@@ -326,37 +386,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wall1" />
 
-    <ImageView
-        android:id="@+id/jellyfish0"
-        android:layout_width="80px"
-        android:layout_height="80px"
-        android:layout_marginStart="376dp"
-        android:layout_marginTop="308dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jellyfish" />
-
-    <ImageView
-        android:id="@+id/jellyfish3"
-        android:layout_width="80px"
-        android:layout_height="80px"
-        android:layout_marginStart="376dp"
-        android:layout_marginTop="308dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jellyfish" />
-
-    <ImageView
-        android:id="@+id/jellyfish1"
-        android:layout_width="80px"
-        android:layout_height="80px"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="252dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jellyfish" />
-
-    <ImageView
+    +<ImageView
         android:id="@+id/wall2"
         android:layout_width="100px"
         android:layout_height="100px"
@@ -399,15 +429,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Game Over"
+        android:textColor="#313131"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="156dp"
         tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:textAlignment="textEnd"
+        android:textColor="#313131"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="256dp"
+        tools:layout_editor_absoluteY="9dp"
+        tools:text="a" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="You Win!"
+        android:textColor="#313131"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="156dp"
         tools:layout_editor_absoluteY="158dp" />

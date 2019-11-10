@@ -12,7 +12,9 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/sand" />
+        android:src="@drawable/sand"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/background2"
@@ -25,7 +27,7 @@
         tools:layout_editor_absoluteX="-16dp" />
 
     <ImageView
-        android:id="@+id/wall24"
+        android:id="@+id/wall22"
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="368dp"
@@ -135,7 +137,7 @@
         app:srcCompat="@drawable/wall1" />
 
     <ImageView
-        android:id="@+id/trash"
+        android:id="@+id/trash8"
         android:layout_width="100px"
         android:layout_height="100px"
         android:layout_marginStart="368dp"
@@ -325,6 +327,36 @@
         app:srcCompat="@drawable/wall1" />
 
     <ImageView
+        android:id="@+id/jellyfish0"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="376dp"
+        android:layout_marginTop="308dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish" />
+
+    <ImageView
+        android:id="@+id/jellyfish3"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="376dp"
+        android:layout_marginTop="308dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish" />
+
+    <ImageView
+        android:id="@+id/jellyfish1"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="252dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jellyfish" />
+
+    <ImageView
         android:id="@+id/wall2"
         android:layout_width="100px"
         android:layout_height="100px"
@@ -343,5 +375,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/garbo" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="retry"
+        android:text="Play Again?"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="quit"
+        android:text="Quit"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="429dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Over"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Win!"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="158dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
